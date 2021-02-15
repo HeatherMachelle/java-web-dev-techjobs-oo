@@ -8,10 +8,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class JobTest {
-
+    
+    Job testJob;
     Job job1 = new Job();
     Job job2 = new Job();
-    Job testJob;
     Job testEmptyJob;
 
     @Before
@@ -25,7 +25,7 @@ public class JobTest {
     }
 
     @Test
-    public void testSettingJobId(){
+    public void testJobId(){
         assertTrue((job1.getId() != job2.getId()));
     }
 
@@ -39,7 +39,7 @@ public class JobTest {
     }
 
     @Test
-    public void testJobsforEquality(){
+    public void testJobsEquality(){
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertTrue((!job1.equals(job2)));
